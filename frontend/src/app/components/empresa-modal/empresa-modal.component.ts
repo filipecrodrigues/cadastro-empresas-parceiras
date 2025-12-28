@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Empresa } from '../../models/empresa.model';
-import { EmpresaService } from '../../services/empresa.service';
+import { Empresa } from '../../core/models/empresa.model';
+import { EmpresaService } from '../../core/services/empresa.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 

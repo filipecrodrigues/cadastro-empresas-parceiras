@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { EmpresaService } from '../../services/empresa.service';
-import { Empresa } from '../../models/empresa.model';
+import { EmpresaService } from '../../core/services/empresa.service';
+import { Empresa } from '../../core/models/empresa.model';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { EmpresaModalComponent } from '../empresa-modal/empresa-modal.component';
