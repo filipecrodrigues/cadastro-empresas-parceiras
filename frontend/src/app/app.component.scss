@@ -1,0 +1,108 @@
+.toolbar {
+  padding: 0 20px;
+  height: 64px;
+}
+
+/* Logo + título */
+.toolbar-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #673ab7, #ffb300);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: #fff;
+}
+
+.title {
+  font-size: 1.1rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* Espaçador */
+.spacer {
+  flex: 1 1 auto;
+}
+
+/* Navegação */
+.toolbar-nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.toolbar-nav a {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+  transition: all 0.25s ease;
+}
+
+/* Ícones */
+.toolbar-nav mat-icon {
+  font-size: 20px;
+}
+
+/* Hover */
+.toolbar-nav a:hover {
+  background: rgba(255, 193, 7, 0.18);
+  color: #ffc107;
+}
+
+/* Rota ativa */
+.toolbar-nav a.active {
+  background: rgba(255, 193, 7, 0.25);
+  color: #ffc107;
+}
+
+
+/* Responsividade básica */
+@media (max-width: 768px) {
+  .title {
+    display: none; /* Esconde o título para ganhar espaço */
+  }
+
+  .toolbar-nav a {
+    padding: 6px 10px; /* Menos padding para links */
+    font-size: 0.9rem; /* Texto um pouco menor */
+  }
+
+  .toolbar-nav mat-icon {
+    font-size: 18px; /* Ícones um pouco menores */
+  }
+}
+
+/* Para telas muito pequenas, tipo celular */
+@media (max-width: 480px) {
+  .toolbar {
+    padding: 0 10px;
+  }
+
+  .toolbar-nav {
+    gap: 6px; /* Menos espaço entre links */
+  }
+
+  .toolbar-nav a {
+    padding: 6px 8px;
+    font-size: 0.85rem;
+  }
+
+  .logo {
+    width: 36px;
+    height: 36px;
+  }
+}

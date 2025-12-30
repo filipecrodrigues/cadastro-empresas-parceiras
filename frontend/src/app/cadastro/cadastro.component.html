@@ -1,0 +1,54 @@
+<div class="form-container">
+  <mat-card class="form-card">
+    <mat-card-title>Cadastro de Empresa</mat-card-title>
+    <mat-card-subtitle>Dados da empresa filiada</mat-card-subtitle>
+
+    <mat-card-content>
+      <form class="form-grid">
+
+        <mat-form-field appearance="outline">
+          <mat-label>CNPJ</mat-label>
+          <input matInput placeholder="00.000.000/0000-00" />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Razão Social</mat-label>
+          <input matInput />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Nome Fantasia</mat-label>
+          <input matInput />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Atividade Econômica</mat-label>
+          <input matInput />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Endereço</mat-label>
+          <input matInput />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Telefone</mat-label>
+          <input matInput placeholder="(00) 00000-0000" />
+        </mat-form-field>
+
+      </form>
+    </mat-card-content>
+
+    <mat-card-actions align="end">
+      <button mat-stroked-button color="primary">
+        Cancelar
+      </button>
+      <button mat-flat-button color="accent">
+        Salvar
+      </button>
+      <button mat-flat-button color="accent">
+        Atualizar
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>
