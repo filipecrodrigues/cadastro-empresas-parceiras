@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-consulta',
   imports: [],
   templateUrl: './consulta.component.html',
-  styleUrl: './consulta.component.scss'
+  styleUrls: ['./consulta.component.scss']
 })
 export class ConsultaComponent {
 

@@ -6,7 +6,7 @@ import { MatIconModule, MatIcon } from '@angular/material/icon'//para utiliza√ß√
   selector: 'app-root',
   imports: [RouterOutlet, RouterLink, MatToolbarModule, MatIcon],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
   title = 'frontend';
