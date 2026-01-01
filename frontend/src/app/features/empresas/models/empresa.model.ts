@@ -5,5 +5,5 @@ export interface Empresa {
   nomeFantasia: string;
   atividadeEconomica: string;
   endereco: string;
-  telefone: Date;
+  telefone: String;
 }
