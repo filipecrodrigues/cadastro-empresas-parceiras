@@ -4,7 +4,7 @@ import {MatToolbarModule} from '@angular/material/toolbar'; //importação toolb
 import { MatIconModule, MatIcon } from '@angular/material/icon'//para utilização de icones
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, RouterLink, MatToolbarModule, MatIcon],
+  imports: [RouterOutlet, RouterLink, MatToolbarModule, MatIconModule],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
