@@ -3,7 +3,9 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Empresa } from '../models/empresa.model';
 
-@Injectable({
+// @Injectable indica que a classe EmpresaService pode ser injetada em outros componentes
+// e permite que o Angular injete dependências nela.
+@Injectable({ 
   providedIn: 'root' // Service global, não precisa importar em módulo
 })
 export class EmpresaService {
