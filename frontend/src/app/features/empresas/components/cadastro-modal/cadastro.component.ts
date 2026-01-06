@@ -1,10 +1,11 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { Empresa } from '../../models/empresa.model';
 import { EmpresaService } from '../../services/empresa.service';
 
@@ -17,13 +18,13 @@ import { EmpresaService } from '../../services/empresa.service';
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    MatSnackBarModule,
   ],
   templateUrl: './cadastro.component.html',
-  styleUrls: ['./cadastro.component.scss']
+  styleUrls: ['./cadastro.component.scss'],
 })
-export class CadastroComponent {
-
+export class CadastroComponent implements OnInit {
   @Input() empresaEditar?: Empresa;
 
   empresa: Empresa = {
@@ -32,10 +33,13 @@ export class CadastroComponent {
     nomeFantasia: '',
     atividadeEconomica: '',
     endereco: '',
-    telefone: ''
+    telefone: '',
   };
 
-  constructor(private empresaService: EmpresaService) {}
+  constructor(
+    private empresaService: EmpresaService,
+    private snackBar: MatSnackBar
+  ) {}
 
   ngOnInit(): void {
     if (this.empresaEditar) {
@@ -47,10 +51,25 @@ export class CadastroComponent {
     if (this.empresa.cnpj && this.empresa.razaoSocial) {
       this.empresaService.criar(this.empresa).subscribe({
         next: () => {
-          console.log('Empresa cadastrada com sucesso!');
+          this.snackBar.open('Empresa cadastrada com sucesso!', 'Fechar', {
+            duration: 3000,
+            horizontalPosition: 'center',
+            verticalPosition: 'top',
+          });
+
           this.cancelar();
         },
-        error: (err) => console.error('Erro ao cadastrar empresa', err)
+        error: () => {
+          this.snackBar.open(
+            'Erro ao cadastrar empresa. Tente novamente.',
+            'Fechar',
+            {
+              duration: 5000,
+              horizontalPosition: 'center',
+              verticalPosition: 'top',
+            }
+          );
+        },
       });
     }
   }
@@ -62,7 +81,7 @@ export class CadastroComponent {
       nomeFantasia: '',
       atividadeEconomica: '',
       endereco: '',
-      telefone: ''
+      telefone: '',
     };
   }
 }
