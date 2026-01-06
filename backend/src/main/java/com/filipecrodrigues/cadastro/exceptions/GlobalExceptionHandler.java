@@ -75,9 +75,6 @@ public class GlobalExceptionHandler {
         error.put("error", "Erro interno do servidor");
         error.put("message", "Ocorreu um erro inesperado");
 
-        // Logaria o erro em produção
-       // ex.printStackTrace();
-
         // Retorna HTTP 500
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(error);
     }
