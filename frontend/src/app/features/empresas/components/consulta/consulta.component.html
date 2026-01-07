@@ -1,0 +1,55 @@
+<main>
+  <div class="container">
+
+    <!-- TOOLBAR -->
+    <div class="toolbar">
+      <div class="toolbar-left">
+        <h2>Empresas Cadastradas</h2>
+        <p>{{ empresas.length }} empresas no sistema</p>
+      </div>
+
+      <div class="search-box">
+        <input
+          type="text"
+          class="search-input"
+          [(ngModel)]="searchTerm"
+          placeholder="Buscar por CNPJ, razão social..."
+        >
+      </div>
+    </div>
+
+    <!-- CARDS -->
+    <div class="cards-grid">
+      <div class="card" *ngFor="let emp of empresasFiltradas">
+        <div class="card-header">
+          <div class="card-id">#{{ emp.id }}</div>
+        </div>
+
+        <h3 class="card-title">{{ emp.nomeFantasia }}</h3>
+        <p class="card-subtitle">{{ emp.razaoSocial }}</p>
+        <p class="card-subtitle">Atividade Econômica: {{ emp.atividadeEconomica }}</p>
+
+        <div class="card-info">
+          <div class="info-row">
+            <span class="info-label">CNPJ:</span>
+            <span class="info-value">{{ emp.cnpj }}</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">Endereço:</span>
+            <span class="info-value">{{ emp.endereco }}</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">Telefone:</span>
+            <span class="info-value">{{ emp.telefone }}</span>
+          </div>
+        </div>
+
+        <div class="card-actions">
+          <button class="btn btn-success btn-icon" (click)="editar(emp.id)">✏️</button>
+          <button class="btn btn-danger btn-icon" (click)="deletar(emp.id)">🗑️</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</main>
